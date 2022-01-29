@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "alex_pablo_pro"
+version = "0.1.0"
+description = ""
+authors = ["lukyanets-ai <lukyanets_ai@groupbwt.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+selenium = "^4.1.0"
+pytest = "^6.2.5"
+bs4 = "^0.0.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

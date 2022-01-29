@@ -1,19 +1,17 @@
 import pytest
 import time
 
+from pages.xwiks_page import XwiksPage
+
 link = "https://xwiks.com/"
 
 
 def test_can_user_sing_in_with_correct_data(browser):
-    browser.get(link)
-    time.sleep(2)
-    burger_button = browser.find_element_by_css_selector(
-        "button[class='v-app-bar__nav-icon icon-menu v-btn v-btn--icon v-btn--round theme--dark v-size--default']")
-    burger_button.click()
-    time.sleep(5)
-    sign_in_button = browser.find_element_by_xpath("//div[@class='signup-wrapp']/a")
-    sign_in_button.click()
-    time.sleep(4)
+    page = XwiksPage(browser, link)
+    page.open_page(page.url)
+    page.click_burger_buttom()
+    page.click_sign_in_button()
+
     input_name = browser.find_element_by_xpath("//input[@type='email']")
     input_name.send_keys("pavlik@maillinator.com")
     input_psw = browser.find_element_by_xpath("//input[@type='password']")
